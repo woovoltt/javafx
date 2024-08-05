@@ -4,6 +4,7 @@ public class Karaoke {
     // 영희가 푸시하려고 시도함..
     // 그냥 써본거유
     // 오늘 점심 뭐 먹지?
+    // 철수가 먼저 푸시함
     private int id;
     private String songname;
     private String singer;
