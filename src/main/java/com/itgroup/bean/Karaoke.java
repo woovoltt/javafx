@@ -1,6 +1,7 @@
 package com.itgroup.bean;
 
 public class Karaoke {
+    // 그냥 써본거유
     private int id;
     private String songname;
     private String singer;
