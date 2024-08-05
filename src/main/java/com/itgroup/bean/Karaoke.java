@@ -1,6 +1,7 @@
 package com.itgroup.bean;
 
 public class Karaoke {
+    // 영희가 푸시하려고 시도함
     // 그냥 써본거유
     // 오늘 점심 뭐 먹지?
     private int id;
