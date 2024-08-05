@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.scene.text.Font?>
+<?import com.sun.javafx.scene.control.DoubleField?>
+<AnchorPane prefHeight="540.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.itgroup.controller.KaraokeInsertController">
+    <children>
+        <!-- 변수 정의 -->
+        <fx:define>
+            <Double fx:id="xLabelPosition" fx:value="56.0"/> <!-- 라벨의 x좌표 위치 -->
+            <Double fx:id="xTextFieldPosition" fx:value="135.0"/> <!-- 입력 상자의 x좌표 위치 -->
+            <Double fx:id="TextFieldWidth" fx:value="200.0"/> <!-- 입력 상자의 너비 -->
+        </fx:define>
+        <Label layoutX="$xLabelPosition" layoutY="17.0" text="노래 등록 화면">
+            <font>
+                <Font size="25.0"/>
+            </font>
+        </Label>
+        <!-- Product 클래스를 토대로 fxml 파일 내에서 다음과 같이 camel case 표기법으로 작성합니다. -->
+        <Label layoutX="$xLabelPosition" layoutY="60.0" text="아이디">
+            <font>
+                <Font size="15.0" fx:id="myFont01"/>
+            </font>
+        </Label>
+        <TextField fx:id="fxmlId" layoutX="$xTextFieldPosition" layoutY="60.0" prefWidth="$TextFieldWidth" text=""/>
+
+
+        <Label font="$myFont01" layoutX="$xLabelPosition" layoutY="120.0" text="노래제목"/>
+        <TextField fx:id="fxmlSongname" layoutX="$xTextFieldPosition" layoutY="120.0" prefWidth="$TextFieldWidth" text=""/>
+
+
+        <Label font="$myFont01" layoutX="$xLabelPosition" layoutY="180.0" text="가수"/>
+        <TextField fx:id="fxmlSinger" layoutX="$xTextFieldPosition" layoutY="180.0" prefWidth="$TextFieldWidth" text=""/>
+
+
+        <Label font="$myFont01" layoutX="$xLabelPosition" layoutY="240.0" text="장르"/>
+        <ComboBox fx:id="fxmlGenre" layoutX="$xTextFieldPosition" layoutY="240.0" prefWidth="$TextFieldWidth">
+            <items>
+                <!-- factory 속성은 자바의 static 메소드를 객체 생성 하고자 할 때 사용합니다. -->
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="-- 카테고리를 선택해주세요."/>
+                    <String fx:value="발라드"/>
+                    <String fx:value="힙합"/>
+                    <String fx:value="댄스"/>
+                    <String fx:value="락"/>
+                    <String fx:value="록"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+
+        <Label font="$myFont01" layoutX="$xLabelPosition" layoutY="300.0" text="발매일"/>
+        <DatePicker fx:id="fxmlSongdate" layoutX="$xTextFieldPosition" layoutY="300.0" prefWidth="$TextFieldWidth" promptText="날짜를 선택해주세요."/>
+
+        <Label font="$myFont01" layoutX="$xLabelPosition" layoutY="360.0" text="url 입력"/>
+        <TextField fx:id="fxmlUrl" layoutX="$xTextFieldPosition" layoutY="360.0" prefWidth="$TextFieldWidth"/>
+
+
+
+    </children>
+    <Button layoutX="$xLabelPosition" layoutY="420" prefHeight="50" prefWidth="280" text="등록하기" onAction="#onProductInsert">
+        <font>
+            <Font name="System Bold" size="20.0"/>
+        </font>
+    </Button>
+</AnchorPane>
